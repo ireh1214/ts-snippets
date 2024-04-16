@@ -2,7 +2,7 @@
 //공배수 구하기
 
 function solution(number: number, n: number, m: number) {
-	let answer = 0;
+	const answer: number = number % n === 0 && number % m === 0 ? 1 : 0;
 
-	return (answer = number % n === 0 && number % m === 0 ? 1 : 0);
+	return answer;
 }
