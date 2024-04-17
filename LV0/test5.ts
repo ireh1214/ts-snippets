@@ -1,7 +1,7 @@
 //https://school.programmers.co.kr/learn/courses/30/lessons/181930
 //주사위 게임
 
-function solution(a: number, b: number, c: number) {
+export default function solution(a: number, b: number, c: number) {
 	let answer = 0;
 
 	if (a !== b && b !== c && c !== a) {
