@@ -1,16 +1,20 @@
-//https://school.programmers.co.kr/learn/courses/30/lessons/181930
-//주사위 게임
+//https://school.programmers.co.kr/learn/courses/30/lessons/181925
+//수 조작하기2
 
-function solution(a: number, b: number, c: number) {
-	let answer = 0;
+export default function solution(numLog: []) {
+	let answer = "";
 
-	if (a !== b && b !== c && c !== a) {
-		answer = a + b + c;
-	} else if (a === b && b === c && c === a) {
-		answer =
-			(a + b + c) * (a ** 2 + b ** 2 + c ** 2) * (a ** 3 + b ** 3 + c ** 3);
-	} else {
-		answer = (a + b + c) * (a ** 2 + b ** 2 + c ** 2);
+	for (let i = 1; i < numLog.length; i++) {
+		if (numLog[i] === numLog[i - 1] + 1) {
+			answer += "w";
+		} else if (numLog[i] === numLog[i - 1] - 1) {
+			answer += "s";
+		} else if (numLog[i] === numLog[i - 1] + 10) {
+			answer += "d";
+		} else {
+			answer += "a";
+		}
 	}
+
 	return answer;
 }

@@ -1,10 +1,21 @@
-// https://school.programmers.co.kr/learn/courses/30/lessons/181933
-// flag에 따라 다른 값 반환하기
+//https://school.programmers.co.kr/learn/courses/30/lessons/181926
+// 수 조작하기
 
-function solution(a: number, b: number, flag: boolean) {
+export default function solution(n: number, control: string) {
 	let answer = 0;
 
-	answer = flag === true ? a + b : a - b;
+	for (let i = 0; i < control.length; i++) {
+		if (control[i] === "w") {
+			n += 1;
+		} else if (control[i] === "s") {
+			n -= 1;
+		} else if (control[i] === "d") {
+			n += 10;
+		} else if (control[i] === "a") {
+			n -= 10;
+		}
+	}
 
+	answer = n;
 	return answer;
 }
