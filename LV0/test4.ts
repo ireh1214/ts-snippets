@@ -2,8 +2,6 @@
 // 수 조작하기
 
 export default function solution(n: number, control: string) {
-	let answer = 0;
-
 	for (let i = 0; i < control.length; i++) {
 		if (control[i] === "w") {
 			n += 1;
@@ -16,6 +14,5 @@ export default function solution(n: number, control: string) {
 		}
 	}
 
-	answer = n;
-	return answer;
+	return n;
 }
