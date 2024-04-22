@@ -1,7 +1,7 @@
 //https://school.programmers.co.kr/learn/courses/30/lessons/181921
 //배열 만들기2
 
-function solution(l: number, r: number) {
+export default function solution(l: number, r: number) {
 	const answer = [];
 
 	for (let i = l; i <= r; i++) {

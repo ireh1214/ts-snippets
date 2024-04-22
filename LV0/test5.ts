@@ -4,16 +4,10 @@
 export default function solution(numLog: []) {
 	let answer = "";
 
+	//현재 요소와 이전 요소의 차이가 x이면 y추가
 	for (let i = 1; i < numLog.length; i++) {
-		if (numLog[i] === numLog[i - 1] + 1) {
-			answer += "w";
-		} else if (numLog[i] === numLog[i - 1] - 1) {
-			answer += "s";
-		} else if (numLog[i] === numLog[i - 1] + 10) {
-			answer += "d";
-		} else {
-			answer += "a";
-		}
+		const diff = numLog[i] - numLog[i - 1];
+		answer += diff === 1 ? "w" : diff === -1 ? "s" : diff === 10 ? "d" : "a";
 	}
 
 	return answer;
