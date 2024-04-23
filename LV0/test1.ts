@@ -1,15 +1,19 @@
-//https://school.programmers.co.kr/learn/courses/30/lessons/181929
-//원소들의 곱과 합
+ //https://school.programmers.co.kr/learn/courses/30/lessons/120818
+ //옷가게 할인 받기
+ 
+ export default function solution(price:number) {
 
-export default function solution(num_list: []) {
-	let sumX = 1;
-	let sumY = 0;
+    const dc1 = 100000
+    const dc2 = 300000
+    const dc3 = 500000
 
-	for (const num of num_list) {
-		sumX *= num;
-		sumY += num;
-	}
-
-	const sumYSquared = sumY ** 2;
-	return sumX > sumYSquared ? 0 : 1;
+    if (price >= dc1 && price < dc2) {
+        return Math.floor(price * .95)
+    } else if (price >= dc2 && price < dc3) {
+        return Math.floor(price * .9)
+    } else if (price >= dc3) {
+        return Math.floor(price * .8)
+    } else {
+        return price
+    }
 }

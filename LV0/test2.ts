@@ -1,19 +1,17 @@
-//https://school.programmers.co.kr/learn/courses/30/lessons/181928
-//이어 붙인 수
+//https://school.programmers.co.kr/learn/courses/30/lessons/120825
+//문자 반복 출력하기
 
-export default function solution(num_list: [number]) {
-	let answer = 0;
-	let oddSum = "";
-	let evenSum = "";
-	//초기엔 string으로 받아올 것이니 빈 배열로 준비합니다
+export default function solution(my_string:string, n:number) {
 
-	for (let i = 0; i < num_list.length; i++) {
-		if (num_list[i] % 2 !== 0) {
-			oddSum += num_list[i];
-		} else {
-			evenSum += num_list[i];
-		}
-	}
-	answer = Number(oddSum) + Number(evenSum);
-	return answer;
+    //첫번째 방법
+    let my_newString = '';
+    for(const i of my_string){
+   my_newString += i.repeat(n)
+    }
+    return my_newString
+    
+    
+    //두번째 방법
+    let answer = [...my_string].map(i => i.repeat(n)).join("");
+    return answer;
 }

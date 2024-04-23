@@ -1,87 +1,46 @@
-//정답률이 높은 문제 순으로 정렬해 보니까 쉬운 문제가 많아 여기 정리하겠습니다!
-
-//https://school.programmers.co.kr/learn/courses/30/lessons/120806
-//두 수의 나눗셈
-function test1(num1: number, num2: number) {
-	return Math.floor((num1 / num2) * 1000);
+//https://school.programmers.co.kr/learn/courses/30/lessons/120813
+//짝수는 싫어요
+function test1(n:number) {
+    const answer = [];
+    for (let i = 0; i <= n; i ++){
+        if(i % 2 === 1){
+            answer.push(i)
+        }
+    }
+    return answer;
 }
 
-//https://school.programmers.co.kr/learn/courses/30/lessons/120807
-//숫자 비교하기
-function test2(num1: number, num2: number) {
-	return num1 === num2 ? 1 : -1;
+//https://school.programmers.co.kr/learn/courses/30/lessons/120814
+//피자 나눠 먹기 (1)
+
+function test2(n:number) {
+    return Math.ceil(n / 7);
 }
 
-//https://school.programmers.co.kr/learn/courses/30/lessons/120820
-//나이 출력
-function test3(age: number) {
-	const yearBirth = 2022;
-	return yearBirth - age + 1;
+//https://school.programmers.co.kr/learn/courses/30/lessons/120816
+//피자 나눠 먹기 (3)
+function test3(slice:number, n:number) {
+return Math.ceil(n/slice);
 }
 
-//https://school.programmers.co.kr/learn/courses/30/lessons/120817
-//배열의 평균값
-function test4(numbers: []) {
-	let sum = 0;
-	for (let i = 0; i < numbers.length; i++) {
-		sum += numbers[i];
-	}
-
-	return sum / numbers.length;
+//https://school.programmers.co.kr/learn/courses/30/lessons/120819
+//아이스 아메리카노
+function test4(money:number) {
+const changes = money % 5500;
+const americano = Math.floor(money/5500);
+return [ americano , changes];
 }
 
-//https://school.programmers.co.kr/learn/courses/30/lessons/120829
-//각도기
-function test5(angle: number) {
-	return angle < 90 ? 1 : angle === 90 ? 2 : angle < 180 ? 3 : 4;
-}
-//https://school.programmers.co.kr/learn/courses/30/lessons/120831
-//짝수의 합
-function test6(n: number) {
-	let sum = 0;
-	for (let i = 0; i <= n; i++) {
-		if (i % 2 === 0) {
-			sum += i;
-		}
-	}
-	return sum;
+//https://school.programmers.co.kr/learn/courses/30/lessons/120821
+//배열 뒤집기
+function test5(num_list:[]) {
+    let newNumList:[] = [];
+    
+    //at은 인덱스를 지정못해서 설정할수 없는가 보다...
+    for (let i = num_list.length -1; i >= 0; i --){
+        newNumList.push(num_list[i])
+    }
+    return newNumList;
 }
 
-//https://school.programmers.co.kr/learn/courses/30/lessons/120583
-//중복된 숫자 개수
-function test7(array: [number], n: number) {
-	let answer = 0;
-	for (let i = 0; i < array.length; i++) {
-		if (array[i] === n) {
-			answer++;
-		}
-	}
-	return answer;
-}
 
-//https://school.programmers.co.kr/learn/courses/30/lessons/120585
-//머쓱이보다 키 큰 사람
-function test8(array: [number], height: number) {
-	return array.filter((num) => num > height).length;
-}
-
-//https://school.programmers.co.kr/learn/courses/30/lessons/120809
-//배열 두 배 만들기
-//여기선 reduce를 사용할 수도 있음
-function test9(numbers: [number]) {
-	const sumArr = [];
-	for (let i = 0; i < numbers.length; i++) {
-		sumArr.push(numbers[i] * 2);
-	}
-
-	return sumArr;
-}
-
-//https://school.programmers.co.kr/learn/courses/30/lessons/120811
-//중앙값 구하기
-function solution(array: [number]) {
-	for (let i = 0; i < array.length; i++) {
-		array.sort((a, b) => a - b);
-	}
-	return array[Math.floor(array.length / 2)];
-}
