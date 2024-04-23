@@ -79,7 +79,7 @@ function test9(numbers: [number]) {
 
 //https://school.programmers.co.kr/learn/courses/30/lessons/120811
 //중앙값 구하기
-function solution(array: [number]) {
+function test10(array: [number]) {
 	for (let i = 0; i < array.length; i++) {
 		array.sort((a, b) => a - b);
 	}
