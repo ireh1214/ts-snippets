@@ -2,18 +2,15 @@
 //이어 붙인 수
 
 export default function solution(num_list: [number]) {
-	let answer = 0;
 	let oddSum = "";
 	let evenSum = "";
-	//초기엔 string으로 받아올 것이니 빈 배열로 준비합니다
 
-	for (let i = 0; i < num_list.length; i++) {
-		if (num_list[i] % 2 !== 0) {
-			oddSum += num_list[i];
+	for (const i of num_list) {
+		if (i % 2 !== 0) {
+			oddSum += i;
 		} else {
-			evenSum += num_list[i];
+			evenSum += i;
 		}
 	}
-	answer = Number(oddSum) + Number(evenSum);
-	return answer;
+	return Number(oddSum) + Number(evenSum);
 }
