@@ -39,3 +39,11 @@ export default function solution(rsp:string) {
         acc + win_map[c], ''
     )   
 }
+const xs = ["hi", "hello", "bye"] // 5
+
+for(const [i, x] of xs.entries()) {
+    // const [i, x] = entry // [0,"hi"] [1,"hello"] [2,"bye"]
+    // i = 0, 1, 2
+    // x = "hi", "hello", "bye"
+    
+}
