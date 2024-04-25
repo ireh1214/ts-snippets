@@ -2,35 +2,7 @@
 //가위 바위 보
 
 export default function solution(rsp:string) {
-    
-    //첫 번째 방법 (가장 익숙함)
-//            let answer = "";
-    
-//     for (const e of rsp){
-//   if (e === '2'){
-//            answer += "0"
-//          } else if ( e === '0'){
-//             answer += "5"
-//         }else if ( e === '5'){
-//             answer += "2"
-//         }  
-//     }
-    
-//     return answer;
 
-    //두 번째 방법 (map 함수 연습)
-//   const answer = [...rsp].map((e)=>{
-//         if (e === '2'){
-//             return "0"
-//         } else if ( e === '0'){
-//            return "5"
-//         }else if ( e === '5'){
-//            return "2"
-//         }
-//     }).join('');
-  
-//     return answer;
-    
 //서치로 찾아본 좋은 예시 중 하나 (타입에 대한 코드 해석이 필요함)
  const win_map: Record<string, string> = {'0': '5', '2': '0', '5':'2'};
 
@@ -39,11 +11,5 @@ export default function solution(rsp:string) {
         acc + win_map[c], ''
     )   
 }
-const xs = ["hi", "hello", "bye"] // 5
 
-for(const [i, x] of xs.entries()) {
-    // const [i, x] = entry // [0,"hi"] [1,"hello"] [2,"bye"]
-    // i = 0, 1, 2
-    // x = "hi", "hello", "bye"
-    
-}
+
