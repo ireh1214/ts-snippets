@@ -2,7 +2,8 @@
 //배열 만들기2
 
 export default function solution(l: number, r: number) {
-	const answer:[number] = [];
+	//변수에는 타입을 직접 쓰지 않고 설정되어지도록 놔두는 것이 좋다
+	const answer = [];
 
 	for (let i = l; i <= r; i++) {
 		const arr = String(i);

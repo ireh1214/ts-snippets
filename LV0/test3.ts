@@ -1,16 +1,15 @@
 //https://school.programmers.co.kr/learn/courses/30/lessons/181927
 //마지막 두 원소
 
-export default function solution(num_list: number[]): number[] {
+export default function solution(nums: number[]): number[] {
+	const x = nums.at(-1)!;
+	const y = nums.at(-2)!;
 
-	const x: number = num_list.at(-1);
-	const y: number = num_list.at(-2);
+	// type guard
+	// if(x === undefined || y === undefined) {
+	// 	throw new Error()
+	// }
 
-	if (x > y) {
-		num_list.push(x - y);
-	} else {
-		num_list.push(x * 2);
-	}
-
-	return [...num_list];
+	nums.push(x > y ? x - y : x * 2);
+	return nums;
 }
