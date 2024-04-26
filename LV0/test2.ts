@@ -1,17 +1,14 @@
-//https://school.programmers.co.kr/learn/courses/30/lessons/120825
-//문자 반복 출력하기
+//https://school.programmers.co.kr/learn/courses/30/lessons/120892
+//암호 해독
+export default function solution(cipher: string, code: number) {
+	let answer = "";
+	const arr = cipher.split("");
 
-export default function solution(my_string:string, n:number) {
+	for (const [i, x] of arr.entries()) {
+		if ((i + 1) % code === 0) {
+			answer += arr[i];
+		}
+	}
 
-    //첫번째 방법
-    let my_newString = '';
-    for(const i of my_string){
-   my_newString += i.repeat(n)
-    }
-    return my_newString
-    
-    
-    //두번째 방법
-    let answer = [...my_string].map(i => i.repeat(n)).join("");
-    return answer;
+	return answer;
 }

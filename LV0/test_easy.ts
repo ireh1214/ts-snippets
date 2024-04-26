@@ -1,46 +1,69 @@
-//https://school.programmers.co.kr/learn/courses/30/lessons/120813
-//짝수는 싫어요
-function test1(n:number) {
-    const answer = [];
-    for (let i = 0; i <= n; i ++){
-        if(i % 2 === 1){
-            answer.push(i)
-        }
-    }
-    return answer;
+//https://school.programmers.co.kr/learn/courses/30/lessons/120849
+//모음 제거
+function test1(my_string: string) {
+	const remove = "aeiou";
+	let new_string = "";
+
+	//공백도 반환
+	for (const i of my_string) {
+		if (!remove.includes(i)) {
+			new_string += i;
+		}
+	}
+	return new_string;
+	// 풀고 난 후 확인한 정규 표현식 사용법
+	// return my_string.replace(/[aeiou]/g, '');
 }
 
-//https://school.programmers.co.kr/learn/courses/30/lessons/120814
-//피자 나눠 먹기 (1)
+//https://school.programmers.co.kr/learn/courses/30/lessons/120845
+//주사위의 개수
 
-function test2(n:number) {
-    return Math.ceil(n / 7);
+function test2(
+	box: [width: number, length: number, height: number],
+	n: number,
+) {
+	//인자를 안 받아와서 아래 픽스에러가 있는것 같습니다
+	return (
+		Math.floor(box[0] / n) * Math.floor(box[1] / n) * Math.floor(box[2] / n)
+	);
 }
 
-//https://school.programmers.co.kr/learn/courses/30/lessons/120816
-//피자 나눠 먹기 (3)
-function test3(slice:number, n:number) {
-return Math.ceil(n/slice);
+//https://school.programmers.co.kr/learn/courses/30/lessons/120893
+//대문자와 소문자
+
+function test3(my_string: string) {
+	let answer = "";
+	for (const i of my_string) {
+		if (i === i.toUpperCase()) {
+			answer += i.toLowerCase();
+		} else {
+			answer += i.toUpperCase();
+		}
+	}
+
+	return answer;
 }
 
-//https://school.programmers.co.kr/learn/courses/30/lessons/120819
-//아이스 아메리카노
-function test4(money:number) {
-const changes = money % 5500;
-const americano = Math.floor(money/5500);
-return [ americano , changes];
+//https://school.programmers.co.kr/learn/courses/30/lessons/120898
+//편지
+
+function test4(message: string) {
+	return message.length * 2;
 }
 
-//https://school.programmers.co.kr/learn/courses/30/lessons/120821
-//배열 뒤집기
-function test5(num_list:[]) {
-    let newNumList:[] = [];
-    
-    //at은 인덱스를 지정못해서 설정할수 없는가 보다...
-    for (let i = num_list.length -1; i >= 0; i --){
-        newNumList.push(num_list[i])
-    }
-    return newNumList;
+//https://school.programmers.co.kr/learn/courses/30/lessons/120899
+//가장 큰 수 찾기
+
+function test5(array: number[]) {
+	const answer = [];
+	for (const [i, x] of array.entries()) {
+		if (x === Math.max(...array)) {
+			answer.push(x, i);
+		}
+	}
+	return answer;
+
+	// 아래 방법도 있다는 것을 배웠습니다
+	//  let max = Math.max(...array);
+	//  return [max, array.indexOf(max)];
 }
-
-

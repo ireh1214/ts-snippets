@@ -1,13 +1,20 @@
-//https://school.programmers.co.kr/learn/courses/30/lessons/120837
-//개미 군단
+//https://school.programmers.co.kr/learn/courses/30/lessons/120895
+//인덱스 바꾸기
 
-//%, /이 둘다 필요한거같습니다
-function solution(hp:number) {
-const a = hp % 5
-const x = Math.floor(hp / 5);
-const y = Math.floor(a / 3);
-const remain = a % 3;
+export default function solution(
+	my_string: string,
+	num1: number,
+	num2: number,
+) {
+	let answer = "";
+	for (let i = 0; i < my_string.length; i++) {
+		answer +=
+			i === num1
+				? my_string[num2]
+				: i === num2
+					? my_string[num1]
+					: my_string[i];
+	}
 
-return x + y + remain;  
+	return answer;
 }
-
