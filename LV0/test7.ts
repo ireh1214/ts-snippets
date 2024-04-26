@@ -8,9 +8,9 @@ export default function solution(l: number, r: number) {
 	for (let i = l; i <= r; i++) {
 		const arr = String(i);
 
-	//includes 메서드는 배열에 특정 요소가 포함되어 있는지 여부를 확인함
-		     if (!arr.includes("5") || !arr.includes("0")) continue;
-        answer.push(i);
+		//includes 메서드는 배열에 특정 요소가 포함되어 있는지 여부를 확인함
+		if (!arr.includes("5") || !arr.includes("0")) continue;
+		answer.push(i);
 	}
 
 	return answer.length ? answer : [-1];

@@ -11,5 +11,5 @@ export default function solution(arr: [], queries: [number, number][]) {
 		arr[x] = temp;
 	});
 
-	return arr; 
+	return arr;
 }
