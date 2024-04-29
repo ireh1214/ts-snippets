@@ -34,13 +34,8 @@ function test2(
 function test3(my_string: string) {
 	let answer = "";
 	for (const i of my_string) {
-		if (i === i.toUpperCase()) {
-			answer += i.toLowerCase();
-		} else {
-			answer += i.toUpperCase();
-		}
+		answer += i === i.toUpperCase() ? i.toLowerCase() : i.toUpperCase();
 	}
-
 	return answer;
 }
 

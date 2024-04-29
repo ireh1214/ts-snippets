@@ -6,7 +6,7 @@ export default function solution(cipher: string, code: number) {
 
 	for (const [i, x] of arr.entries()) {
 		if ((i + 1) % code === 0) {
-			answer += arr[i];
+			answer += x;
 		}
 	}
 
