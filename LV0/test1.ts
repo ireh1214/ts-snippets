@@ -2,12 +2,11 @@
 //삼각형의 완성조건(1)
 
 export default function solution([a, b, c]: [number, number, number]) {
-	// sides.sort((a, b) => b - a);
-	// const x = sides[0];
-	// const y = sides[1] + sides[2];
-	// return x < y ? 1 : 2;
+	//가장 큰 숫자를 찾기
+	// const max = Math.max(a, b, c);
+	// return max < a + b + c - max ? 1 : 2;
 
-	//답을 이렇게 찾았지만 아직 확실히 이해가 안 되어서 공부해봐야 할것 같습니다!!
-	[a, b, c] = [a, b + c];
+	//구조분해 할당을 이용하기
+	[a, b] = [a, b + c];
 	return a < b ? 1 : 2;
 }
