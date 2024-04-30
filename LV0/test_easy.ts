@@ -101,3 +101,22 @@ function test9(flo: number) {
 function test10(rny_string: string) {
 	return rny_string.replace(/m/g, "rn");
 }
+
+//https://school.programmers.co.kr/learn/courses/30/lessons/181873
+//특정한 문자를 대문자로 바꾸기
+
+function test11(my_string: string, alp: string) {
+	return my_string.replaceAll(alp, alp.toUpperCase());
+}
+
+//https://school.programmers.co.kr/learn/courses/30/lessons/181874
+//A 강조하기
+function test12(myString: string) {
+	return myString.toLowerCase().replaceAll("a", "A");
+}
+
+//https://school.programmers.co.kr/learn/courses/30/lessons/181878
+//원하는 문자열 찾기
+function test13(myString: string, pat: string) {
+	return myString.toLowerCase().includes(pat.toLowerCase()) ? 1 : 0;
+}
