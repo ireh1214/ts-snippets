@@ -120,3 +120,54 @@ function test12(myString: string) {
 function test13(myString: string, pat: string) {
 	return myString.toLowerCase().includes(pat.toLowerCase()) ? 1 : 0;
 }
+
+//https://school.programmers.co.kr/learn/courses/30/lessons/181892
+//n번째 원소부터
+function test14(num_list: number[], n: number) {
+	return num_list.slice(n - 1);
+}
+
+//https://school.programmers.co.kr/learn/courses/30/lessons/181899
+// 카운트다운
+function test15(start: number, end_num: number) {
+	const answer = [];
+	for (let i = start; i >= end_num; i--) {
+		answer.push(i);
+	}
+	return answer;
+}
+//https://school.programmers.co.kr/learn/courses/30/lessons/181920
+// 카운트 업
+function test15_2(s: number, e: number) {
+	return Array.from({ length: e - s + 1 }, (_, i) => s + i);
+}
+
+//https://school.programmers.co.kr/learn/courses/30/lessons/181906
+//접두사인지 확인하기
+function test16(my_string: string, is_prefix: string) {
+	return my_string.startsWith(is_prefix) ? 1 : 0;
+}
+
+//https://school.programmers.co.kr/learn/courses/30/lessons/181908
+//접미사인지 확인하기
+function test17(my_string: string, is_suffix: string) {
+	return my_string.endsWith(is_suffix) ? 1 : 0;
+}
+
+//https://school.programmers.co.kr/learn/courses/30/lessons/181907
+//문자열의 앞의 n글자
+function test18(my_string: string, n: number) {
+	return my_string.slice(0, n);
+}
+
+//https://school.programmers.co.kr/learn/courses/30/lessons/181910
+//문자열의 뒤의 n글자
+function test19(my_string: string, n: number) {
+	return my_string.slice(-n);
+}
+
+//https://school.programmers.co.kr/learn/courses/30/lessons/181841
+//꼬리 문자열
+function test20(str_list: string[], ex: string) {
+	return str_list.filter((str) => !str.includes(ex)).join("");
+}
