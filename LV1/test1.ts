@@ -2,13 +2,7 @@
 //약수의 합
 
 export default function solution(n: number) {
-	let answer = 0;
-
-	for (let i = 1; i <= n; i++) {
-		if (n % i === 0) {
-			answer += i;
-		}
-	}
-
-	return answer;
+	return Array.from({ length: n }, (_, i) => i + 1)
+		.filter((num) => n % num === 0)
+		.reduce((acc, n) => acc + n, 0);
 }

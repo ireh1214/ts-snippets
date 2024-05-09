@@ -2,14 +2,11 @@
 //문자열 내 p와 y의 개수
 
 export default function solution(s: string) {
-	const x = s
-		.toLowerCase()
-		.split("")
-		.filter((c) => c === "p").length;
-	const y = s
-		.toLowerCase()
-		.split("")
-		.filter((c) => c === "y").length;
+	const x = (t: string) =>
+		s
+			.toLowerCase()
+			.split("")
+			.filter((c) => c === t).length;
 
-	return x === y;
+	return x("p") === x("y");
 }
