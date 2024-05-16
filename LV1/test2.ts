@@ -1,20 +1,11 @@
-//https://school.programmers.co.kr/learn/courses/30/lessons/12947
-//하샤드 수
+export default function solution(num: number) {
+	let answer = 0;
 
-export default function solution(x: number) {
-	const y = String(x)
-		.split("")
-		.map(Number)
-		.reduce((acc, n) => acc + n, 0);
+	for (let i = num; i !== 1; ) {
+		answer++;
+		i % 2 === 0 ? (i /= 2) : (i = i * 3 + 1);
+		if (answer === 500) return -1;
+	}
 
-	return x % y === 0;
-
-	//아래는 속도 개선을 할 수 있는 방식입니다
-	// let num = x;
-	// let sum = 0;
-	// while (num > 0) {
-	// 	sum += num % 10;
-	// 	num = Math.floor(num / 10);
-	// }
-	// return x % sum === 0;
+	return answer;
 }

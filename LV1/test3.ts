@@ -1,12 +1,7 @@
-//https://school.programmers.co.kr/learn/courses/30/lessons/12954
-//x만큼 간격이 있는 n개의 숫자
+//https://school.programmers.co.kr/learn/courses/30/lessons/12910
+//나누어 떨어지는 숫자 배열
 
-export default function solution(x: number, n: number) {
-	const answer = [];
-
-	for (let i = 1; i <= n; i++) {
-		answer.push(x * i);
-	}
-
-	return answer;
+export default function solution(arr: number[], divisor: number) {
+	const answer = arr.filter((x) => x % divisor === 0);
+	return answer.length ? answer.sort((a, b) => a - b) : [-1];
 }

@@ -1,10 +1,12 @@
-//https://school.programmers.co.kr/learn/courses/30/lessons/12916
-//문자열 내 p와 y의 개수
+//https://school.programmers.co.kr/learn/courses/30/lessons/86051
+//없는 숫자 더하기
 
-export default function solution(s: string) {
-	const transferS = s.toLowerCase();
-	const x = transferS.split("p").length;
-	const y = transferS.split("y").length;
-
-	return x === y;
+export default function solution(numbers: number[]) {
+	let sum = 0;
+	for (let i = 0; i < 10; i++) {
+		if (!numbers.includes(i)) {
+			sum += i;
+		}
+	}
+	return sum;
 }

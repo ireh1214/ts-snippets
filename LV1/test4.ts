@@ -1,14 +1,7 @@
-//https://school.programmers.co.kr/learn/courses/30/lessons/12912
-//두 정수 사이의 합
+//https://school.programmers.co.kr/learn/courses/30/lessons/12935
+//제일 작은 수 제거하기
 
-function solution(a: number, b: number) {
-	const s = Math.min(a, b);
-	const e = Math.max(a, b);
-	let answer = 0;
-
-	for (let i = s; i <= e; i++) {
-		answer += i;
-	}
-
-	return answer;
+export default function solution(arr: number[]) {
+	const answer = arr.filter((n) => n !== Math.min(...arr));
+	return answer.length > 0 ? answer : [-1];
 }

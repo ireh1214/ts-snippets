@@ -1,8 +1,15 @@
-//https://school.programmers.co.kr/learn/courses/30/lessons/12928
-//약수의 합
+//https://school.programmers.co.kr/learn/courses/30/lessons/76501
+//음양 더하기
 
-export default function solution(n: number) {
-	return Array.from({ length: n }, (_, i) => i + 1)
-		.filter((num) => n % num === 0)
-		.reduce((acc, n) => acc + n, 0);
+export default function solution(absolutes: number[], signs: boolean[]) {
+	const sum = [];
+	for (const [i, x] of absolutes.entries()) {
+		if (!signs[i]) {
+			sum.push(-x);
+		} else {
+			sum.push(x);
+		}
+	}
+
+	return sum.reduce((acc, num) => acc + num, 0);
 }
