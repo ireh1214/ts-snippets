@@ -1,11 +1,17 @@
 //https://school.programmers.co.kr/learn/courses/30/lessons/76501
 //음양 더하기
 
-export default function solution(absolutes: number[], signs: boolean[]) {
-	const sum = [];
-	for (const [i, x] of absolutes.entries()) {
-		sum.push(!signs[i] ? -x : x);
-	}
+function zip<T, U>(arr1: T[], arr2: U[]): [T, U][] {
+	return arr1.map((v, i) => [v, arr2[i]]);
+}
 
-	return sum.reduce((acc, num) => acc + num, 0);
+function solution(absolutes: number[], signs: boolean[]) {
+	const x: [number, boolean][] = zip(absolutes, signs);
+	let sum = 0;
+
+	x.forEach(([absolute, sign]) => {
+		sum += sign ? absolute : -absolute;
+	});
+
+	return sum;
 }
