@@ -2,17 +2,18 @@
 //이상한 문자 만들기
 
 function solution(s: string) {
-	const answer = s.split(" ");
+	const y = s.split(" ");
+	let answer = "";
 
-	for (const [i, _] of answer.entries()) {
-		const str = answer[i];
-		let x = "";
-
+	//아래 i < y.length가 필요해서 부득이 놔뒀습니다!!
+	for (const [i, _] of y.entries()) {
+		const str = y[i];
 		for (let j = 0; j < str.length; j++) {
-			x += j % 2 === 0 ? str[j].toUpperCase() : str[j].toLowerCase();
+			answer += j % 2 === 0 ? str[j].toUpperCase() : str[j].toLowerCase();
 		}
-
-		answer[i] = x;
+		if (i < y.length - 1) {
+			answer += " ";
+		}
 	}
-	return answer.join(" ");
+	return answer;
 }

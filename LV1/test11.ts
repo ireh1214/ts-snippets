@@ -2,15 +2,10 @@
 //최대공약수와 최소공배수
 
 export default function solution(n: number, m: number) {
-	let x = n;
-	let y = m;
+	const gcd = (a: number, b: number): number => (b === 0 ? a : gcd(b, a % b));
 
-	while (y !== 0) {
-		const temp = y;
-		y = x % y;
-		x = temp;
-	}
+	const gcdResult = gcd(n, m);
+	const lcm = (n * m) / gcdResult;
 
-	const lcm = (n * m) / x;
-	return [x, lcm];
+	return [gcdResult, lcm];
 }
