@@ -5,8 +5,7 @@ function solution(s: string) {
 	const y = s.split(" ");
 	let answer = "";
 
-	//아래 i < y.length가 필요해서 부득이 놔뒀습니다!!
-	for (const [i, _] of y.entries()) {
+	for (let i = 0; i < y.length; i++) {
 		const str = y[i];
 		for (let j = 0; j < str.length; j++) {
 			answer += j % 2 === 0 ? str[j].toUpperCase() : str[j].toLowerCase();
