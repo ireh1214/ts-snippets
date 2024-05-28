@@ -2,14 +2,12 @@
 //최소직사각형
 
 export default function solution(sizes: [number, number][]) {
-	const { x, y } = sizes.reduce(
-		(acc, [w, h]) => {
-			acc.x.push(w < h ? w : h);
-			acc.y.push(w < h ? h : w);
-			return acc;
-		},
-		{ x: [], y: [] },
-	);
+	const w = [];
+	const h = [];
+	for (const x of sizes) {
+		w.push(Math.min(x[0], x[1]));
+		h.push(Math.max(x[0], x[1]));
+	}
 
-	return Math.max(...x) * Math.max(...y);
+	return Math.max(...w) * Math.max(...h);
 }

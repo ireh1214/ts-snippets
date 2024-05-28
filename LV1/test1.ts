@@ -1,21 +1,26 @@
 //https://school.programmers.co.kr/learn/courses/30/lessons/12926
 //시저 암호
 
-function solution(s: string, n: number) {
-	//이 문제는 ASCII 코드 값을 검색해서 풀었습니다
+export default function solution(s: string, n: number): string {
+	//각 ASCII 코드 값을 변수처리하여 magic number를 없앴습니다
+	const A_UP = 65;
+	const Z_UP = 90;
+	const A_LOW = 97;
+	const ALPHA_LEN = 26;
 	let result = "";
 
-	for (const i of s) {
-		let x = i;
+	for (const char of s) {
+		let x = char;
 		if (x !== " ") {
 			if (x.match(/[a-zA-Z]/)) {
-				let code = i.charCodeAt(0);
-				//대문자인지 확인
-				const isUpperCase = code >= 65 && code <= 90;
+				let code = char.charCodeAt(0);
+				const isUpper = code >= A_UP && code <= Z_UP;
 
-				isUpperCase
-					? (code = ((code - 65 + n) % 26) + 65)
-					: (code = ((code - 97 + n) % 26) + 97);
+				if (isUpper) {
+					code = ((code - A_UP + n) % ALPHA_LEN) + A_UP;
+				} else {
+					code = ((code - A_LOW + n) % ALPHA_LEN) + A_LOW;
+				}
 
 				x = String.fromCharCode(code);
 			}
