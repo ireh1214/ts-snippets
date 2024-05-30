@@ -6,9 +6,8 @@ function solution(s: string) {
 	let answer = "";
 
 	for (const [i, x] of y.entries()) {
-		const str = x;
-		for (let j = 0; j < str.length; j++) {
-			answer += j % 2 === 0 ? str[j].toUpperCase() : str[j].toLowerCase();
+		for (let j = 0; j < x.length; j++) {
+			answer += j % 2 === 0 ? x[j].toUpperCase() : x[j].toLowerCase();
 		}
 		if (i < y.length - 1) {
 			answer += " ";
