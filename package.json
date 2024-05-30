@@ -9,8 +9,12 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@biomejs/biome": "^1.6.3",
+    "@biomejs/biome": "1.7.1",
+    "@types/lodash": "^4.17.4",
     "tsx": "^4.7.1",
     "typescript": "^5.4.3"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
   }
 }
