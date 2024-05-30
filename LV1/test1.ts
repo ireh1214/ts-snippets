@@ -2,10 +2,9 @@
 //시저 암호
 
 export default function solution(s: string, n: number): string {
-	//각 ASCII 코드 값을 변수처리하여 magic number를 없앴습니다
-	const A_UP = 65;
-	const Z_UP = 90;
-	const A_LOW = 97;
+	const A = "A".charCodeAt(0);
+	const Z = "Z".charCodeAt(0);
+	const A_LOW = "a".charCodeAt(0);
 	const ALPHA_LEN = 26;
 	let result = "";
 
@@ -14,13 +13,11 @@ export default function solution(s: string, n: number): string {
 		if (x !== " ") {
 			if (x.match(/[a-zA-Z]/)) {
 				let code = char.charCodeAt(0);
-				const isUpper = code >= A_UP && code <= Z_UP;
+				const isUpper = code >= A && code <= Z;
 
-				if (isUpper) {
-					code = ((code - A_UP + n) % ALPHA_LEN) + A_UP;
-				} else {
-					code = ((code - A_LOW + n) % ALPHA_LEN) + A_LOW;
-				}
+				code = isUpper
+					? ((code - A + n) % ALPHA_LEN) + A
+					: ((code - A_LOW + n) % ALPHA_LEN) + A_LOW;
 
 				x = String.fromCharCode(code);
 			}
