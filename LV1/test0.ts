@@ -1,19 +1,13 @@
-//https://school.programmers.co.kr/learn/courses/30/lessons/131705
-//삼총사
+//https://school.programmers.co.kr/learn/courses/30/lessons/142086
+//가장 가까운 같은 글자
 
-export default function solution(number: number[]) {
-	let count = 0;
-	const n = number.length;
+export default function solution(s: string) {
+	const answer = [];
 
-	for (let i = 0; i < n - 2; i++) {
-		for (let j = i + 1; j < n - 1; j++) {
-			for (let k = j + 1; k < n; k++) {
-				if (number[i] + number[j] + number[k] === 0) {
-					count++;
-				}
-			}
-		}
+	for (const [i, x] of [...s].entries()) {
+		const before = s.slice(0, i);
+		answer.push(before.lastIndexOf(x) === -1 ? -1 : i - before.lastIndexOf(x));
 	}
 
-	return count;
+	return answer;
 }
