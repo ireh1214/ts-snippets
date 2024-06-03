@@ -14,10 +14,9 @@ export default function solution(s: string, n: number): string {
 			if (x.match(/[a-zA-Z]/)) {
 				let code = char.charCodeAt(0);
 				const isUpper = code >= A && code <= Z;
+				const y = isUpper ? A : A_LOW;
 
-				code = isUpper
-					? ((code - A + n) % ALPHA_LEN) + A
-					: ((code - A_LOW + n) % ALPHA_LEN) + A_LOW;
+				code = ((code - y + n) % ALPHA_LEN) + y;
 
 				x = String.fromCharCode(code);
 			}
