@@ -1,28 +1,23 @@
-//https://school.programmers.co.kr/learn/courses/30/lessons/12926
-//시저 암호
+//https://school.programmers.co.kr/learn/courses/30/lessons/81301
+//숫자 문자열과 영단어
 
-export default function solution(s: string, n: number): string {
-	const A = "A".charCodeAt(0);
-	const Z = "Z".charCodeAt(0);
-	const A_LOW = "a".charCodeAt(0);
-	const ALPHA_LEN = 26;
-	let result = "";
+export default function solution(s: string) {
+	const num = {
+		zero: 0,
+		one: 1,
+		two: 2,
+		three: 3,
+		four: 4,
+		five: 5,
+		six: 6,
+		seven: 7,
+		eight: 8,
+		nine: 9,
+	};
 
-	for (const char of s) {
-		let x = char;
-		if (x !== " ") {
-			if (x.match(/[a-zA-Z]/)) {
-				let code = char.charCodeAt(0);
-				const isUpper = code >= A && code <= Z;
-				const y = isUpper ? A : A_LOW;
-
-				code = ((code - y + n) % ALPHA_LEN) + y;
-
-				x = String.fromCharCode(code);
-			}
-		}
-
-		result += x;
+	for (const [i, x] of Object.entries(num)) {
+		s = s.replace(new RegExp(i, "g"), x);
 	}
-	return result;
+
+	return Number(s);
 }
