@@ -1,11 +1,12 @@
 //https://school.programmers.co.kr/learn/courses/30/lessons/131705
 //삼총사 재귀함수 풀이
+import _ from "lodash";
 
 function findTrios(n: number[], cur: number[], s: number) {
 	let count = 0;
 
 	if (cur.length === 3) {
-		if (cur.reduce((a, b) => a + b, 0) === 0) {
+		if (_.sum(cur) === 0) {
 			count++;
 		}
 		return count;
@@ -19,6 +20,9 @@ function findTrios(n: number[], cur: number[], s: number) {
 	return count;
 }
 
-export default function solution(n: number) {
+export default function solution(n: number[]) {
 	return findTrios(n, [], 0);
 }
+
+
+

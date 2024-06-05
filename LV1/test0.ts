@@ -5,8 +5,8 @@ export default function solution(s: string) {
 	const answer = [];
 
 	for (const [i, x] of [...s].entries()) {
-		const before = s.slice(0, i);
-		answer.push(before.lastIndexOf(x) === -1 ? -1 : i - before.lastIndexOf(x));
+		const before = s.slice(0, i).lastIndexOf(x);
+		answer.push(before === -1 ? -1 : i - before);
 	}
 
 	return answer;
