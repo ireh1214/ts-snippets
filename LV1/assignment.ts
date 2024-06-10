@@ -2,27 +2,27 @@
 //삼총사 재귀함수 풀이
 import _ from "lodash";
 
-function findTrios(n: number[], cur: number[], s: number) {
-	let count = 0;
-
+function findTrios(xs: number[], cur: number[], s: number) {
 	if (cur.length === 3) {
-		if (_.sum(cur) === 0) {
-			count++;
-		}
-		return count;
+		return _.sum(cur) === 0 ? 1 : 0;
 	}
 
-	for (let i = s; i < n.length; i++) {
-		cur.push(n[i]);
-		count += findTrios(n, cur, i + 1);
-		cur.pop();
+	let count = 0;
+
+	for (let i = s; i < xs.length; i++) {
+		count += findTrios(xs, [...cur, xs[i]], i + 1);
 	}
 	return count;
 }
 
-export default function solution(n: number[]) {
-	return findTrios(n, [], 0);
+export default function solution(xs: number[]) {
+	return findTrios(xs, [], 0);
+	//const ys = combinations(xs, 3)
+	// [3,-1,4]
 }
 
+function combinations(xs: number[], pick: number): number[][] {
+	return [];
+}
 
 
