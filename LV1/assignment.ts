@@ -9,8 +9,8 @@ function findTrios(xs: number[], cur: number[], s: number) {
 
 	let count = 0;
 
-	for (let i = s; i < xs.length; i++) {
-		count += findTrios(xs, [...cur, xs[i]], i + 1);
+	for (const [s, x] of xs.entries()) {
+		count += findTrios(xs, [...cur, x], s + 1);
 	}
 	return count;
 }
@@ -24,5 +24,3 @@ export default function solution(xs: number[]) {
 function combinations(xs: number[], pick: number): number[][] {
 	return [];
 }
-
-

@@ -1,17 +1,13 @@
 //https://school.programmers.co.kr/learn/courses/30/lessons/120844
 //배열 회전시키기
 
-export default function solution(numbers: number[], direction: string) {
-	const x = numbers[0];
-	const y = numbers[numbers.length - 1];
-	const dir = direction === "right";
-
-	if (dir) {
-		numbers.pop();
-		numbers.unshift(y);
+function solution1(numbers: number[], direction: string) {
+	if (direction === "right") {
+		// biome-ignore lint: lint/style/noNonNullAssertion
+		numbers.unshift(numbers.pop()!);
 	} else {
-		numbers.shift();
-		numbers.push(x);
+		// biome-ignore lint: lint/style/noNonNullAssertion
+		numbers.push(numbers.shift()!);
 	}
 
 	return numbers;
