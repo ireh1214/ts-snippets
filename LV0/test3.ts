@@ -2,8 +2,18 @@
 //점의 위치 구하기
 
 export default function solution(dot: number[]) {
-	const x = Math.sign(dot[0]);
-	const y = Math.sign(dot[1]);
+	const x = dot[0];
+	const y = dot[1];
 
-	return x + y === 2 ? 1 : x === -1 && y === 1 ? 2 : x + y === -2 ? 3 : 4;
+	let location = 1; //초기값
+
+	if (x < 0 && y > 0) {
+		location = 2;
+	} else if (x < 0 && y < 0) {
+		location = 3;
+	} else if (x > 0 && y < 0) {
+		location = 4;
+	}
+
+	return location;
 }
