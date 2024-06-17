@@ -1,24 +1,33 @@
-//https://school.programmers.co.kr/learn/courses/30/lessons/81301
-//숫자 문자열과 영단어
+//https://school.programmers.co.kr/learn/courses/30/lessons/134240
+//푸드 파이트 대회
 
-export default function solution(s: string) {
-	const num = {
-		zero: "0",
-		one: "1",
-		two: "2",
-		three: "3",
-		four: "4",
-		five: "5",
-		six: "6",
-		seven: "7",
-		eight: "8",
-		nine: "9",
-	};
+export default function solution(food: number[]) {
+	//1차 통과
+	// let answer = "";
+	// let set = 0;
+	// let newFood = food.map(String);
 
-	let result = s;
-	for (const [i, x] of Object.entries(num)) {
-		result = s.replace(new RegExp(i, "g"), x);
+	//     for (const i of newFood){
+	//         const x = (i % 2 !== 0) ? i - 1 : i
+
+	//         if(i === 1){
+	//             set++
+	//         }else {
+	//             answer += (String(set).repeat(x / 2))
+	//             set++
+	//         }
+
+	//     }
+
+	// return answer + "0" + [...answer].reverse().join("");
+
+	//2차 (리팩토링)
+	let answer = "";
+
+	for (let set = 1; set < food.length; set++) {
+		answer += String(set).repeat(Math.floor(food[set] / 2));
 	}
 
-	return Number.parseInt(result);
+	// biome-ignore lint/style/useTemplate: <explanation>
+	return answer + "0" + [...answer].reverse().join("");
 }

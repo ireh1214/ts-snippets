@@ -1,7 +1,12 @@
-//https://school.programmers.co.kr/learn/courses/30/lessons/181844
-//배열의 원소 삭제하기
+//https://school.programmers.co.kr/learn/courses/30/lessons/181898
+//가까운 1 찾기
 
-export default function solution(arr: number[], delete_list: number[]) {
-	return arr.filter((n) => !delete_list.includes(n));
+export default function solution(arr: number[], idx: number) {
+	for (let i = idx; i < arr.length; i++) {
+		if (arr[i] === 1) {
+			return i;
+		}
+	}
+
+	return -1;
 }
-
