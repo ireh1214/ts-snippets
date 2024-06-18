@@ -2,18 +2,19 @@
 //코드 처리하기
 
 export default function solution(code: string) {
-	let mode = 0;
+	let mode = false;
 	let ret = "";
 
 	for (const [i, x] of [...code].entries()) {
-		if (mode === 0) {
-			// biome-ignore lint/suspicious/noAssignInExpressions: <explanation>
-			x === "1" ? (mode = 1) : i % 2 === 0 && (ret += x);
+		const even = i % 2 === 0;
+
+		//변경되는 코드는 가급적 눈에 띄는 곳에 있어야 보기 좋다
+		if (x === "1") {
+			mode = !mode;
 		} else {
 			// biome-ignore lint/suspicious/noAssignInExpressions: <explanation>
-			x === "1" ? (mode = 0) : i % 2 !== 0 && (ret += x);
+			mode ? !even && (ret += x) : even && (ret += x);
 		}
 	}
-
 	return ret.length > 0 ? ret : "EMPTY";
 }
