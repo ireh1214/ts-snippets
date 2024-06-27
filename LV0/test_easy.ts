@@ -2,7 +2,7 @@
 //숫자 찾기
 
 function test1(num: number, k: number) {
-	const x = String(num);
+	const index = String(num).indexOf(String(k));
 
-	return x.includes(String(k)) ? x.indexOf(String(k)) + 1 : -1;
+	return index !== -1 ? index + 1 : -1;
 }
