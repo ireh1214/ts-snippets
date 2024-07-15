@@ -7,13 +7,13 @@ export default function solution(k: number, score: number[]) {
 
 	for (const i of score) {
 		hof.push(i);
-		hof.sort((a, b) => b - a);
 
 		if (hof.length > k) {
-			hof.pop();
+			hof.splice(hof.indexOf(Math.min(...hof)), 1);
 		}
 
-		answer.push(hof[hof.length - 1]);
+		// answer.push(hof.at(-1));
+		answer.push(Math.min(...hof));
 	}
 
 	return answer;
