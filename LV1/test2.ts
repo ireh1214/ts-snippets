@@ -1,21 +1,31 @@
-//https://school.programmers.co.kr/learn/courses/30/lessons/132267
-//콜라 문제
+//https://school.programmers.co.kr/learn/courses/30/lessons/42840
+// 모의고사
 
-const _ = require("lodash");
+export default function solution(answers: number[]) {
+	const n1 = [1, 2, 3, 4, 5];
+	const n2 = [2, 1, 2, 3, 2, 4, 2, 5];
+	const n3 = [3, 3, 1, 1, 2, 2, 4, 4, 5, 5];
+	const sum = [0, 0, 0];
 
-export default function solution(
-	a: number,
-	b: number,
-	n: number,
-	answer: number[] = [],
-): number {
-	if (n < a) {
-		return _.sum(answer);
+	for (const [i, x] of answers.entries()) {
+		if (x === n1[i % n1.length]) {
+			sum[0]++;
+		}
+		if (x === n2[i % n2.length]) {
+			sum[1]++;
+		}
+		if (x === n3[i % n3.length]) {
+			sum[2]++;
+		}
 	}
 
-	const x = Math.floor(n / a) * b;
-	answer.push(x);
-	const newN = (n % a) + x;
+	const result = [];
 
-	return solution(a, b, newN, answer);
+	for (const [i, x] of sum.entries()) {
+		if (x === Math.max(...sum)) {
+			result.push(i + 1);
+		}
+	}
+
+	return result;
 }
