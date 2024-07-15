@@ -1,18 +1,21 @@
-//https://school.programmers.co.kr/learn/courses/30/lessons/12915
-//문자열 내 마음대로 정렬하기
+//https://school.programmers.co.kr/learn/courses/30/lessons/132267
+//콜라 문제
 
-export default function solution(strings: string[], n: number) {
-	//첫 번째 시도 코드
-	// return strings.sort((a, b) => {
-	// 	if (a[n] === b[n]) {
-	// 		return (a > b) - (a < b);
-	// 	} else {
-	// 		return (a[n] > b[n]) - (a[n] < b[n]);
-	// 	}
-	// });
+const _ = require("lodash");
 
-	//멘토링 이후 시도 코드
-	return strings.sort((a, b) =>
-		a[n] === b[n] ? (a > b ? 1 : -1) : a[n] > b[n] ? 1 : -1,
-	);
+export default function solution(
+	a: number,
+	b: number,
+	n: number,
+	answer: number[] = [],
+): number {
+	if (n < a) {
+		return _.sum(answer);
+	}
+
+	const x = Math.floor(n / a) * b;
+	answer.push(x);
+	const newN = (n % a) + x;
+
+	return solution(a, b, newN, answer);
 }
